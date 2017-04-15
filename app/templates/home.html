@@ -1,6 +1,13 @@
 <div ng-controller="HomeCtrl">
-    <h1>ChatRooms</h1>
-    <div ng-repeat="rm in home.rooms">
-        <div>{{rm}}</div>
-    </div>
+    <aside class="container">
+        <div id="sidebar">
+            <h1>ChatRooms</h1>
+            <ul id="rooms">
+                <li class="room" ng-repeat="rm in rooms">
+                <a href="/">{{rm.$value}}</a></li>
+            </ul>
+
+        </div>
+
+    </aside>
 </div>
