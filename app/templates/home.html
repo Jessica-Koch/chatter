@@ -1,13 +1,16 @@
 <div ng-controller="HomeCtrl">
-    <aside class="container">
+    <aside class="wrapper">
         <div id="sidebar">
             <h1>ChatRooms</h1>
             <ul id="rooms">
                 <li class="room" ng-repeat="rm in rooms">
-                <a href="/">{{rm.$value}}</a></li>
+                <a class="room-link"  href="/">{{rm.name}}</a></li>
             </ul>
-
+            <div class="sb-section" ng-controller="PopupCtrl">
+                <button ng-click="open()" class="circle">
+                    <i class="ion-plus-round"></i>
+                </button>
+            </div>
         </div>
-
     </aside>
 </div>

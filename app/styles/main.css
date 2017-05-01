@@ -16,10 +16,16 @@ h1, h2, h3, h4,h5 {
     color: #fff;
     font-weight: 300;
 }
+button{
+  cursor: pointer;
+}
+button:focus, input:focus {
+  outline:0;
+}
 a {
   text-decoration: none;
 }
-.container {
+.wrapper {
     position: relative;
     background-color: rgb(38, 17, 85);
     background-color: rgba(255,255,255, 0.3);
@@ -30,6 +36,8 @@ a {
     position: absolute;
     top: 0;
     width: 100%;
+    display: flex;
+    flex-direction: column;
     bottom: 0;
     left: 0;
 }
@@ -38,6 +46,7 @@ a {
   text-align: center;
   padding-bottom: 60px;
   color: #fff;
+  font-size: 2em;
 }
 ul {
   -webkit-display: flex;
@@ -46,30 +55,122 @@ ul {
   -o-display: flex;
   display: flex;
   flex-direction: column;
+  padding: 0;
+  flex-grow: 1;
 }
 li.room{
     list-style: none;
     cursor: pointer;
-    display: inline-block;
-    padding-bottom: 30px;
+    position: relative;
+    margin: 0;
+    padding: 20px;
+    display: block;
+    z-index: 5;
+
 }
 .room a{
   color: #fff;
+  padding-left: 30px;
+  margin-bottom: 20px;
 }
 .room:after {
-  background: none repeat scroll 0 0 transparent;
-  /*bottom: 0;*/
   content: "";
-  display: block;
-  height: 2px;
-  left: 0;
   position: absolute;
-  background: #fff;
-  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  left: 0;
+  top: 0;
   width: 0;
+  height: 100%;
+  background-color: rgb(38, 17, 85);
+  background-color: rgba(255,255,255, 0.3);
+  display: block;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
 }
 
+.room:hover{
+    background-position: 0 0;
+
+}
 .room:hover:after {
   width: 100%;
   left: 0;
+}
+
+.sb-section {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.sb-section .circle {
+    background-color: rgba(255,255,255, 0);
+    border-radius: 100%;
+    border: 2px solid #fff;
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.sb-section .circle:hover{
+    background-color: rgba(255,255,255, 0.3);
+    transition: background-color 0.2s ease;
+}
+
+.sb-section .circle i {
+    margin: auto;
+    color: #fff;
+    font-size: 16px;
+}
+
+/* Bootstrap Overrides */
+.modal-body {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  background: #3D445D;
+  text-align: center;
+}
+.modal-header {
+  border: none;
+}
+.modal-body label {
+  color: #fff;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 300;
+}
+.modal-form {
+  padding: 20px;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.modal-form input {
+    border-radius: 10em;
+    border: none;
+    font-size: 15px;
+    padding-left: 20px;
+    height:40px;
+  flex-grow: 1;
+}
+.modal-footer .btn+.btn{
+  margin-left: 0;
+}
+.modal-footer {
+    width: 100%;
+    display: flex;
+    padding: 0;
+    border: none;
+}
+.modal-footer button{
+  width: 50%;
+  border: none;
+  text-transform: uppercase;
+  height: 60px;
+  border-radius: initial;
+}
+.modal-footer .btn-primary {
+  background: #71a4c1;
+}
+.modal-footer .btn-warning {
+  background: #efa986;
 }
