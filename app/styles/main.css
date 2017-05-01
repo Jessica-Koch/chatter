@@ -1,0 +1,75 @@
+html {
+    height: 100%;
+}
+body {
+    background: #0B486B;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left top, #F56217, #06045e);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left top, #F56217, #06045e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    margin: 0 auto;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 300;
+}
+h1, h2, h3, h4,h5 {
+    font-family: 'Roboto', serif;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 300;
+}
+a {
+  text-decoration: none;
+}
+.container {
+    position: relative;
+    background-color: rgb(38, 17, 85);
+    background-color: rgba(255,255,255, 0.3);
+    width: 200px;
+    height: 100vh;
+}
+#sidebar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+#sidebar h1 {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 60px;
+  color: #fff;
+}
+ul {
+  -webkit-display: flex;
+  -moz-display: flex;
+  -ms-display: flex;
+  -o-display: flex;
+  display: flex;
+  flex-direction: column;
+}
+li.room{
+    list-style: none;
+    cursor: pointer;
+    display: inline-block;
+    padding-bottom: 30px;
+}
+.room a{
+  color: #fff;
+}
+.room:after {
+  background: none repeat scroll 0 0 transparent;
+  /*bottom: 0;*/
+  content: "";
+  display: block;
+  height: 2px;
+  left: 0;
+  position: absolute;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+.room:hover:after {
+  width: 100%;
+  left: 0;
+}
