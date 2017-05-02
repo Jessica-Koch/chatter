@@ -1,10 +1,10 @@
-<div ng-controller="HomeCtrl">
+<div id="main" ng-controller="HomeCtrl as ctrl">
     <aside class="wrapper">
         <div id="sidebar">
             <h1>ChatRooms</h1>
             <ul id="rooms">
-                <li class="room" ng-repeat="rm in rooms">
-                <a class="room-link"  href="/">{{rm.name}}</a></li>
+                <li class="room" ng-click="activate()" ng-repeat="rm in ctrl.rooms">
+                <a class="room-link"  >{{rm.name}}</a></li>
             </ul>
             <div class="sb-section" ng-controller="PopupCtrl">
                 <button ng-click="open()" class="circle">
@@ -13,4 +13,13 @@
             </div>
         </div>
     </aside>
+    <section class="container">
+        <h1>{{activeChatroom.name}}</h1>
+        <ul id="messages">
+            <li class="message" ng-repeat="msg in ctrl.messages(activeChatroom.$id)">
+                <i class="ion-android-contact"></i>
+                <span>Message: {{msg}}</span>
+            </li>
+        </ul>
+    </section>
 </div>

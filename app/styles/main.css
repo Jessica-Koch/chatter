@@ -25,6 +25,9 @@ button:focus, input:focus {
 a {
   text-decoration: none;
 }
+#main {
+    display: flex;
+}
 .wrapper {
     position: relative;
     background-color: rgb(38, 17, 85);
@@ -71,6 +74,7 @@ li.room{
 .room a{
   color: #fff;
   padding-left: 30px;
+  text-decoration: none;
   margin-bottom: 20px;
 }
 .room:after {
@@ -173,4 +177,8 @@ li.room{
 }
 .modal-footer .btn-warning {
   background: #efa986;
+}
+
+#messages{
+    color: #fff;
 }

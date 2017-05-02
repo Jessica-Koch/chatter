@@ -14,6 +14,7 @@
             $scope.rooms.chatroom = "";
         }
 
+
         $scope.cancel = function() {
             $modalInstance.dismiss('cancel');
         };
