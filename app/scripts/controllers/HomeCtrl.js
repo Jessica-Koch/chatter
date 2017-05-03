@@ -5,7 +5,7 @@
 
         // $scope.getByRoomId = Message.getByRoomId;
         $scope.getByRoomId = function(roomId){
-            return $scope.messages = Message.getByRoomId;
+            $scope.messages = Message.getByRoomId(roomId);
         }
 
         $scope.activeChatroom = null;

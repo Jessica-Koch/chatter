@@ -182,3 +182,32 @@ li.room{
 #messages{
     color: #fff;
 }
+.message-block {
+    display: flex;
+    flex-flow: row wrap;
+}
+.message{
+    background: black;
+    opacity: 0.5;
+    padding: 20px;
+    border-radius: 6px;
+    display:inline-block;
+    position: relative;
+    word-break: break-word;
+    max-width: 70%;
+}
+.ion-android-contact{
+    margin: 5px 21px 0 10px;
+    font-size: 3em;
+}
+.message:before {
+    content: "";
+    position: absolute;
+    display: block;
+    left: 0;
+    border-right: 6px solid #000;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    top: 25px;
+    margin-left: -6px;
+}
