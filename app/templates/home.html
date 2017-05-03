@@ -1,4 +1,4 @@
-<div id="main" ng-controller="HomeCtrl as ctrl">
+<div id="main" ng-controller="HomeCtrl">
     <aside class="wrapper">
         <div id="sidebar">
             <h1>ChatRooms</h1>
@@ -15,11 +15,12 @@
     </aside>
     <section class="container">
         <h1>{{activeChatroom.name}}</h1>
-        <ul id="messages">
+        <div style="color: white;" class="messages">Messages: {{messages}}</div>
+        <!-- <ul id="messages">
             <li class="message" ng-repeat="msg in messages track by $id">
                 <i class="ion-android-contact"></i>
                 <span>Message: {{msg}}</span>
             </li>
-        </ul>
+        </ul> -->
     </section>
 </div>
