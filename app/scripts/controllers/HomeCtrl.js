@@ -1,20 +1,25 @@
 (function () {
     function HomeCtrl ($scope, Room, Message) {
         this.room = Room;
-        var message = Message;
 
-        this.rooms = this.room.all;
+        $scope.rooms = this.room.all;
 
+        // this.messages = this.ssage.getRoomById;
 
         $scope.activeChatroom = null;
+
         // returns active chatroom
         $scope.activate = function () {
           $scope.activeChatroom = this.rm;
+          console.log(Message.getRoomById($scope.activeChatroom))
+
+            // console.log(Message.getByRoomId($scope.activeChatroom))
         }
 
-        this.messages = function(roomId) {
-            message.getRoomById(roomId);
+        $scope.messages = function () {
+            return Message.getByRoomId($scope.activeChatroom);
         }
+
     }
 
     angular

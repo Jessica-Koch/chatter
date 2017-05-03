@@ -1,19 +1,20 @@
 (function() {
-    function Message($firebaseArray) {
-        var ref = firebase.database().ref().child("messages");
-        var msgs = $firebaseArray(ref);
+  function Message($firebaseArray) {
+    var Message = {};
+    var ref = firebase.database().ref().child("messages");
+    var messages = $firebaseArray(ref);
 
-        /**
-        * Filter messages by room id
-        * @return {[type]} [description]
-        */
-        Message.getRoomById = function (roomId) {
-            msgs = $firebaseArray(ref.orderByChild('roomId').equalTo(roomId));
-        }
+    Message.getByRoomId = function(roomId) {
+        // Filter the messages by their room ID.
+        return $firebaseArray(ref.orderByChild('roomId').equalTo(roomId));
 
-        return Message;
-}
-    angular
-        .module('chatter')
-        .factory('Message', ['$firebaseArray', Message])
+    };
+
+    return Message;
+
+  }
+
+  angular
+    .module('chatter')
+    .factory('Message', ['$firebaseArray', Message]);
 })();
