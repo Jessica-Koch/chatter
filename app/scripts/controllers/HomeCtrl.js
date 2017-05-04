@@ -20,5 +20,5 @@
 
     angular
         .module('chatter')
-        .controller('HomeCtrl', ['$scope', 'Room', 'Message', HomeCtrl]);
+        .controller('HomeCtrl', ['$scope', 'Room', 'Message', HomeCtrl])
 })();

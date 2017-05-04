@@ -8,6 +8,7 @@
         return Room;
     }
 
-    angular.module('chatter').factory('Room', ['$firebaseArray', Room]);
+    angular
+        .module('chatter')
+        .factory('Room', ['$firebaseArray', Room]);
 })();
-    

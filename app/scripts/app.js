@@ -10,7 +10,26 @@
                 templateUrl: '/templates/home.html'
             })
     }
+    function CookieAuth($cookies, $modal ) {
+        var currentUser = $cookies.get('chatterCurrentUser');
+        if (!currentUser | currentUser === '') {
+
+            $modal.open({
+                controller: 'CookieAuthCtrl',
+                templateUrl: 'templates/cookieModal.html',
+                backdrop: 'static',
+                keyboard: false,
+                // resolve: {
+                //     items: function () {
+                //         return items;
+                //     }
+                // }
+            });
+        }
+    }
+
     angular
-        .module('chatter', ['ui.router', 'firebase', 'ui.bootstrap'])
-        .config(config);
+        .module('chatter', ['ui.router', 'firebase', 'ui.bootstrap', 'ngCookies'])
+        .config(config)
+        .run(['$cookies', '$modal', CookieAuth])
 })();

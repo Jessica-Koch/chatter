@@ -1,5 +1,5 @@
 (function() {
-    function ModalInstanceCtrl($scope, $modalInstance, $http, Room) {
+    function ModalInstanceCtrl($scope, $modalInstance, Room) {
         // Add a Item to the list
         $scope.rooms = Room;
         var roomKey = $scope.rooms.length;
@@ -20,5 +20,7 @@
         };
     }
 
-    angular.module('chatter').controller('ModalInstanceCtrl', ['$scope', '$modalInstance', '$http', 'Room', ModalInstanceCtrl])
+    angular
+        .module('chatter')
+        .controller('ModalInstanceCtrl', ['$scope', '$modalInstance', 'Room', ModalInstanceCtrl])
 })();

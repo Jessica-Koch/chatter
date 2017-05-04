@@ -211,3 +211,22 @@ li.room{
     top: 25px;
     margin-left: -6px;
 }
+#cookiemodal .modal-form {
+  padding-top: 0;
+}
+#cookiemodal .help-block{
+  margin-bottom: 0;
+}
+#cookiemodal button{
+    width: 100%;
+}
+#cookiemodal .modal-header {
+    padding-bottom: 0;
+}
+.error-block{
+  height: 40px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  width: 100%;
+}
