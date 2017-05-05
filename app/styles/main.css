@@ -32,8 +32,16 @@ a {
     position: relative;
     background-color: rgb(38, 17, 85);
     background-color: rgba(255,255,255, 0.3);
-    width: 200px;
+    /*width: 200px;*/
     height: 100vh;
+}
+#chat-room {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+#chat-room h1 {
+    margin-left: 20px;
 }
 #sidebar {
     position: absolute;
@@ -99,12 +107,12 @@ li.room{
   left: 0;
 }
 
-.sb-section {
+.sb-bottom-section {
     width: 100%;
     text-align: center;
     margin-bottom: 30px;
 }
-.sb-section .circle {
+.sb-bottom-section .circle {
     background-color: rgba(255,255,255, 0);
     border-radius: 100%;
     border: 2px solid #fff;
@@ -182,17 +190,34 @@ li.room{
 #messages{
     color: #fff;
 }
+.pin-to-bottom{
+    opacity: 0.5;
+    background: #000;
+}
+.message-wrapper{
+    padding: 25px;
+
+}
+
+.message-wrapper input{
+    background: none;
+    border: none;
+    color: white;
+    /*line-height: 1.6em;*/
+    width: 90%;
+    border-bottom: 2px solid white
+}
 .message-block {
     display: flex;
     flex-flow: row wrap;
 }
 .message{
-    background: black;
+    background: #000;
     opacity: 0.5;
     padding: 20px;
     border-radius: 6px;
     display:inline-block;
-    position: relative;
+    position: absolute;
     word-break: break-word;
     max-width: 70%;
 }
@@ -210,6 +235,15 @@ li.room{
     border-bottom: 6px solid transparent;
     top: 25px;
     margin-left: -6px;
+}
+.ion-paper-airplane {
+    color: #fff;
+    font-size: 25px;
+    cursor: pointer;
+    float: right;
+}
+.ion-paper-airplane:hover {
+    color: #08058a;
 }
 #cookiemodal .modal-form {
   padding-top: 0;

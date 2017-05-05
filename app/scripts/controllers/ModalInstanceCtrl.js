@@ -3,6 +3,7 @@
         // Add a Item to the list
         $scope.rooms = Room;
         var roomKey = $scope.rooms.length;
+        
         $scope.addRoom = function() {
             $scope.rooms.all.$add({
                 name: $scope.rooms.chatroom
