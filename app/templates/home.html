@@ -33,11 +33,11 @@
                 </li>
             </ul>
             <section ng-hide="!activeChatroom" class="pin-to-bottom">
-                <div class="message-wrapper">
+                <form role="form" name="messageForm" ng-submit="sendMessage()" class="message-wrapper">
                     <input type="text" ng-model="msg" placeholder="type a message" value="">
 
                     <i ng-click="sendMessage()" class="ion-paper-airplane"></i>
-                </div>
+                </form>
             </section>
         </div>
     </section>

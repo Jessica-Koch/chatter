@@ -5,10 +5,18 @@
 
         $scope.isActive = false;
 
+        /**
+         * Check to show and hide dropdown
+         */
         $scope.activeDropdown = function () {
             $scope.isActive = !$scope.isActive;
         }
 
+        /**
+         * Returns the room that the messages should go to
+         * @param  { String } roomId Id for the chatroom
+         * @return { Object } Returns the room
+         */
         $scope.getByRoomId = function(roomId){
             $scope.messages = Message.getByRoomId(roomId);
         }
@@ -23,6 +31,7 @@
 
         $scope.sendMessage = function() {
             $scope.send = Message.send(this.msg, $scope.activeChatroom);
+            $scope.msg = "";
         }
 
     }
