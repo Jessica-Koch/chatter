@@ -17,8 +17,8 @@
             $modal.open({
                 controller: 'CookieAuthCtrl',
                 templateUrl: 'templates/cookieModal.html',
-                // backdrop: 'static',
-                // keyboard: false,
+                backdrop: 'static',
+                keyboard: false,
             });
         }
     }

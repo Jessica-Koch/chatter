@@ -15,7 +15,7 @@
             timeStamp = new Date().toLocaleString(),
             chatRoom = roomId.$id,
             messages = $firebaseArray(ref.orderByChild('roomId').equalTo(chatRoom));
-            console.log(username);
+
             messages.$add({
                 username: username,
                 content: newMessage,

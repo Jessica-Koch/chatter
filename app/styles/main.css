@@ -217,17 +217,17 @@ li.room{
     opacity: 0.5;
     padding: 20px;
     border-radius: 6px;
-    display:inline-block;
     position: absolute;
+    left: 50%;
+    top: 50%;
+    height: auto;
+    transform: translate(-50%, -50%) rotate(0deg);
+    transform-origin: 66px center;
     word-break: break-word;
     max-width: 70%;
 }
-.ion-android-contact{
-    margin: 5px 21px 0 10px;
-    font-size: 3em;
-}
-.message:before {
-    content: "";
+.message:before{
+  content: "";
     position: absolute;
     display: block;
     left: 0;
@@ -237,6 +237,11 @@ li.room{
     top: 25px;
     margin-left: -6px;
 }
+.ion-android-contact{
+    margin: 5px 21px 0 10px;
+    font-size: 3em;
+}
+
 .ion-paper-airplane {
     color: #fff;
     font-size: 25px;
@@ -265,6 +270,29 @@ li.room{
   justify-content: space-around;
   width: 100%;
 }
+
+.message {
+  span: 5em;
+  animation:moveLeftToRight 2s ease-in-out 1s;
+}
+/* Message Blobbing */
+@keyframes moveLeftToRight {
+  0% {
+    transform: translateY(0%) rotate(0deg);
+    transform-origin: center;
+  }
+/*   25% {
+    transform: translateY(-150%) rotate(0deg);
+    transform-origin: center;
+  } */
+  50% {
+    transform: translateY(-150%) rotate(0deg);
+    transform-origin: center;
+  }
+  100% {
+    transform: translateY(0%) rotate(0deg);
+    transform-origin: center;
+  }
 @media only screen and (max-width: 767px) {
   #sidebar{
     padding: 0;
