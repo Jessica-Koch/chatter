@@ -272,7 +272,7 @@ li.room{
 }
 
 .message {
-  span: 5em;
+  margin: 5em;
   animation:moveLeftToRight 2s ease-in-out 1s;
 }
 /* Message Blobbing */
