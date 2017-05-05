@@ -10,7 +10,6 @@
             if(isValid) {
                 $modalInstance.close('closed');
                 $cookies.username = $scope.user.username;
-                console.log($cookies.username)
             } else {
                 console.log('WRONG')
             }

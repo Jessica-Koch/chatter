@@ -3,7 +3,12 @@
         this.room = Room;
         $scope.rooms = this.room.all;
 
-        // $scope.getByRoomId = Message.getByRoomId;
+        $scope.isActive = false;
+
+        $scope.activeDropdown = function () {
+            $scope.isActive = !$scope.isActive;
+        }
+
         $scope.getByRoomId = function(roomId){
             $scope.messages = Message.getByRoomId(roomId);
         }
@@ -14,6 +19,10 @@
         $scope.activate = function () {
           $scope.activeChatroom = this.rm;
           $scope.getByRoomId($scope.activeChatroom.$id);
+        }
+
+        $scope.sendMessage = function() {
+            $scope.send = Message.send(this.msg, $scope.activeChatroom);
         }
 
     }

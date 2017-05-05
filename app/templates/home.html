@@ -1,26 +1,49 @@
 <div id="main" ng-controller="HomeCtrl">
-    <aside class="wrapper">
+    <aside ng-click="activeDropdown()" class="wrapper col-sm-4 col-md-2 col-xs-12">
         <div id="sidebar">
-            <h1>ChatRooms</h1>
-            <ul id="rooms">
+            <div class="nav-wrap visible-xs">
+                <h1>ChatRooms</h1>
+                <div class="visible-xs  sb-bottom-section" ng-controller="PopupCtrl">
+                <button ng-click="open()" class="circle">
+                    <i class="ion-plus-round"></i>
+                </button>
+                </div>
+
+            </div>
+            <h1 class="hidden-xs">ChatRooms</h1>
+            <ul ng-class="{'active': isActive}" id="rooms">
                 <li class="room" ng-click="activate()" ng-repeat="rm in rooms">
                 <a class="room-link"  >{{rm.name}}</a></li>
             </ul>
-            <div class="sb-section" ng-controller="PopupCtrl">
+            <div class="hidden-xs sb-bottom-section" ng-controller="PopupCtrl">
                 <button ng-click="open()" class="circle">
                     <i class="ion-plus-round"></i>
                 </button>
             </div>
         </div>
     </aside>
-    <section class="container">
-        <h1>{{activeChatroom.name}}</h1>
-        <ul id="messages">
-            <li class="message-block" ng-repeat="msg in messages track by $id">
+    <section class="flex-container col-xs-12 col-sm-8 col-md-10">
+        <div class="row" id="chat-room">
+            <h1>{{activeChatroom.name}}</h1>
+            <h2>Welcome {{user.username}}</h2>
+            <ul id="messages">
+                <li class="message-block" ng-repeat="msg in messages">
 
-                <i class="ion-android-contact"></i>
-                <span class="message">{{msg.content}}</span>
-            </li>
-        </ul>
+                    <i class="ion-android-contact"></i>
+                    <span class="message">{{msg.content}}</span>
+                </li>
+            </ul>
+            <section ng-hide="!activeChatroom" class="pin-to-bottom">
+                <div class="message-wrapper">
+                    <input type="text" ng-model="msg" placeholder="type a message" value="">
+                    <filter id="goo">
+                      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+                      <feBlend in="SourceGraphic" in2="goo" />
+                    </filter>
+                    <i ng-click="sendMessage()" class="ion-paper-airplane"></i>
+                </div>
+            </section>
+        </div>
     </section>
 </div>
