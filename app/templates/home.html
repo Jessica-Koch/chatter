@@ -25,20 +25,33 @@
     <section class="flex-container col-xs-12 col-sm-8 col-md-10">
         <div class="row" id="chat-room">
             <h1>{{activeChatroom.name}}</h1>
-            <h2>Welcome {{user.username}}</h2>
-            <ul id="messages">
-                <li class="blob message-block" ng-repeat="msg in messages">
-                    <i class="ion-android-contact"></i>
-                    <span class="message">{{msg.content}}</span>
-                </li>
-            </ul>
-            <section ng-hide="!activeChatroom" class="pin-to-bottom">
-                <form role="form" name="messageForm" ng-submit="sendMessage()" class="message-wrapper">
-                    <input type="text" ng-model="msg" placeholder="type a message" value="">
+            <div class="cage">
+                <form ng-hide="!activeChatroom" role="form" name="messageForm" ng-submit="sendMessage()" class="messaging-form">
+                    <ul id="messages">
+                        <li class="message-block" ng-repeat="msg in messages">
+                            <i class="ion-android-contact"></i>
+                            <!-- <div class="goop"> -->
+                            <div class="message">{{msg.content}}</div>
+                            <!-- </div> -->
+                        </li>
+                    </ul>
+                    <div class="pin-to-bottom">
+                        <input type="text" ng-model="msg" placeholder="type a message" value="">
 
-                    <i ng-click="sendMessage()" class="ion-paper-airplane"></i>
+                        <i ng-click="sendMessage()" class="ion-paper-airplane"></i>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                            <defs>
+                                <filter id="goo">
+                                    <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                                    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+                                    <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+                                </filter>
+
+                            </defs>
+                        </svg>
                 </form>
-            </section>
+            </div>
         </div>
     </section>
 </div>

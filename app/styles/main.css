@@ -1,48 +1,65 @@
-html {
+html, body {
     height: 100%;
 }
+
 body {
-    background: #0B486B;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left top, #F56217, #06045e);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left top, #F56217, #06045e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #0B486B;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left top, #F56217, #06045e);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left top, #F56217, #06045e);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     margin: 0 auto;
     padding: 0;
     font-family: 'Quicksand', sans-serif;
     font-weight: 300;
 }
-h1, h2, h3, h4,h5 {
+
+h1, h2, h3, h4, h5 {
     font-family: 'Roboto', serif;
     text-transform: uppercase;
     color: #fff;
     font-weight: 300;
 }
-button{
-  cursor: pointer;
+
+button {
+    cursor: pointer;
 }
+
 button:focus, input:focus {
-  outline:0;
+    outline: 0;
 }
+
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
+
 #main {
     display: flex;
+    height: 100%;
 }
+
 .wrapper {
     position: relative;
     background-color: rgb(38, 17, 85);
-    background-color: rgba(255,255,255, 0.3);
-    /*width: 200px;*/
-    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.3);
 }
+
+.flex-container {
+    height: 100%;
+    flex-grow: 1;
+}
+
 #chat-room {
-    height: 100vh;
     display: flex;
+    height: 100%;
     flex-direction: column;
 }
+
 #chat-room h1 {
     margin-left: 20px;
 }
+
 #sidebar {
     position: absolute;
     top: 0;
@@ -53,24 +70,27 @@ a {
     bottom: 0;
     left: 0;
 }
+
 #sidebar h1 {
-  width: 100%;
-  text-align: center;
-  padding-bottom: 60px;
-  color: #fff;
-  font-size: 1.5em;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 60px;
+    color: #fff;
+    font-size: 1.5em;
 }
+
 ul {
-  -webkit-display: flex;
-  -moz-display: flex;
-  -ms-display: flex;
-  -o-display: flex;
-  display: flex;
-  flex-direction: column;
-  padding: 0;
-  flex-grow: 1;
+    -webkit-display: flex;
+    -moz-display: flex;
+    -ms-display: flex;
+    -o-display: flex;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    flex-grow: 1;
 }
-li.room{
+
+li.room {
     list-style: none;
     cursor: pointer;
     position: relative;
@@ -80,32 +100,35 @@ li.room{
     z-index: 5;
     color: #fff;
 }
-.room a{
-  color: #fff;
-  padding-left: 30px;
-  text-decoration: none;
-  margin-bottom: 20px;
-}
-.room:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 0;
-  height: 100%;
-  background-color: rgb(38, 17, 85);
-  background-color: rgba(255,255,255, 0.3);
-  display: block;
-  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+
+.room a {
+    color: #fff;
+    padding-left: 30px;
+    text-decoration: none;
+    margin-bottom: 20px;
 }
 
-.room:hover{
+.room:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgb(38, 17, 85);
+    background-color: rgba(255, 255, 255, 0.3);
+    display: block;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+}
+
+.room:hover {
     background-position: 0 0;
     color: white;
 }
+
 .room:hover:after {
-  width: 100%;
-  left: 0;
+    width: 100%;
+    left: 0;
 }
 
 .sb-bottom-section {
@@ -113,8 +136,9 @@ li.room{
     text-align: center;
     margin-bottom: 30px;
 }
+
 .sb-bottom-section .circle {
-    background-color: rgba(255,255,255, 0);
+    background-color: rgba(255, 255, 255, 0);
     border-radius: 100%;
     border: 2px solid #fff;
     width: 50px;
@@ -123,8 +147,8 @@ li.room{
     text-decoration: none;
 }
 
-.sb-section .circle:hover{
-    background-color: rgba(255,255,255, 0.3);
+.sb-section .circle:hover {
+    background-color: rgba(255, 255, 255, 0.3);
     transition: background-color 0.2s ease;
 }
 
@@ -134,97 +158,148 @@ li.room{
     font-size: 16px;
 }
 
+
 /* Bootstrap Overrides */
+
 .modal-body {
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  background: #3D445D;
-  text-align: center;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background: #3D445D;
+    text-align: center;
 }
+
 .modal-header {
-  border: none;
+    border: none;
 }
+
 .modal-body label {
-  color: #fff;
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 300;
+    color: #fff;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 300;
 }
+
 .modal-form {
-  padding: 20px;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+    padding: 20px;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
 }
+
 .modal-form input {
     border-radius: 10em;
     border: none;
     font-size: 15px;
     padding-left: 20px;
-    height:40px;
-  flex-grow: 1;
+    height: 40px;
+    flex-grow: 1;
 }
-.modal-footer .btn+.btn{
-  margin-left: 0;
+
+.modal-footer .btn+.btn {
+    margin-left: 0;
 }
+
 .modal-footer {
     width: 100%;
     display: flex;
     padding: 0;
     border: none;
 }
-.modal-footer button{
-  width: 50%;
-  border: none;
-  text-transform: uppercase;
-  height: 60px;
-  border-radius: initial;
+
+.modal-footer button {
+    width: 50%;
+    border: none;
+    text-transform: uppercase;
+    height: 60px;
+    border-radius: initial;
 }
+
 .modal-footer .btn-primary {
-  background: #71a4c1;
+    background: #71a4c1;
 }
+
 .modal-footer .btn-warning {
-  background: #efa986;
+    background: #efa986;
 }
 
-#messages{
+.cage{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+#messages {
     color: #fff;
+    /*position: fixed;*/
+    margin-bottom: 0;
+    bottom: 0;
+    top: 90%;
+    left: -10%;
+    right: -10%;
 }
-.pin-to-bottom{
+
+
+.messaging-form {
+    width: 100%;
+}
+.pin-to-bottom {
     opacity: 0.5;
+    /*flex-grow: 1;*/
+    width: 100%;
     background: #000;
-}
-.message-wrapper{
+    position: absolute;
+    bottom: 0;
     padding: 25px;
-
 }
 
-.message-wrapper input{
-    background: none;
+.pin-to-bottom input {
     border: none;
     color: white;
+    background-color: transparent;
     width: 90%;
     border-bottom: 2px solid white
 }
+
 .message-block {
+    /*background-color: #000;*/
+    /*opacity: .5;*/
+    position: relative;
+    /*-webkit-filter: url("#goo");
+    filter: url("#goo");*/
+    /*-webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);*/
     display: flex;
     flex-flow: row wrap;
 }
-.message{
-    background: #000;
-    opacity: 0.5;
-    padding: 20px;
+.message {
     border-radius: 6px;
+    overflow: hidden;
     position: absolute;
+    background-color: #000;
+    opacity: .5;
+    top: 0;
     left: 50%;
-    top: 50%;
+    max-width: 70%;
     height: auto;
     word-break: break-word;
-    max-width: 70%;
+    padding: 20px;
+    /*-webkit-animation: big-drop 2s ease infinite;*/
+    /*-moz-animation: big-drop 2s ease infinite;*/
+    /*animation: big-drop 2s ease infinite;*/
+
+
+    position: absolute;
+    left: 7%;
+    top: 15%;
+
+
 }
-.message:before{
-  content: "";
+
+.message:before {
+    content: "";
     position: absolute;
     display: block;
     left: 0;
@@ -234,7 +309,8 @@ li.room{
     top: 25px;
     margin-left: -6px;
 }
-.ion-android-contact{
+
+.ion-android-contact {
     margin: 5px 21px 0 10px;
     font-size: 3em;
 }
@@ -245,80 +321,122 @@ li.room{
     cursor: pointer;
     float: right;
 }
+
 .ion-paper-airplane:hover {
     color: #08058a;
 }
+
 #cookiemodal .modal-form {
-  padding-top: 0;
+    padding-top: 0;
 }
-#cookiemodal .help-block{
-  margin-bottom: 0;
+
+#cookiemodal .help-block {
+    margin-bottom: 0;
 }
-#cookiemodal button{
+
+#cookiemodal button {
     width: 100%;
 }
+
 #cookiemodal .modal-header {
     padding-bottom: 0;
 }
-.error-block{
-  height: 40px;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-  width: 100%;
+
+.error-block {
+    height: 40px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    width: 100%;
 }
 
-.message {
-  margin: 5em;
-  animation:moveLeftToRight 2s ease-in 1s;
-}
 @media only screen and (max-width: 767px) {
-  #sidebar{
-    padding: 0;
-  }
-  .nav-wrap{
-    width: 100%;
-    display: flex!important;
-    align-items: center;
-    justify-content: space-between;
-  }
- #sidebar h1, .nav-wrap .sb-bottom-section{
-  width: auto;
-  margin: 0 0 0 10px;
-  padding: 0;
+    #sidebar {
+        padding: 0;
+    }
+    .nav-wrap {
+        width: 100%;
+        display: flex!important;
+        align-items: center;
+        justify-content: space-between;
+    }
+    #sidebar h1, .nav-wrap .sb-bottom-section {
+        width: auto;
+        margin: 0 0 0 10px;
+        padding: 0;
+    }
+    #sidebar h1 {
+        margin-top: 5px;
+    }
+    #main {
+        flex-direction: column;
+    }
+    aside.wrapper {
+        width: 100%;
+        height: 50px;
+        position: relative;
+    }
+    .sb-bottom-section .circle {
+        border: none;
+    }
+    #rooms {
+        visibility: hidden;
+        /* hides sub-menu */
+        opacity: 0;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        transform: translateY(-2em);
+        z-index: -1;
+        transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+    }
+    #rooms.active {
+        visibility: visible;
+        /* shows sub-menu */
+        opacity: 1;
+        z-index: 1;
+        transform: translateY(0%);
+        transition-delay: 0s, 0s, 0.3s;
+        /* this removes the transition delay so the menu will be visible while the other styles transition */
+    }
+    #rooms.active .room {
+        text-align: center;
+        margin-bottom: 2px;
+        background: rgba(255, 255, 255, .25);
+    }
 }
-#sidebar h1{margin-top: 5px;}
-  #main{
-    flex-direction: column;
+
+@-webkit-keyframes big-drop {
+  0% {
+    top: 25%;
   }
-  /*.nav-wrap{}*/
-  aside.wrapper {
-    width: 100%;
-    height: 50px;
-    position: relative;
+  50% {
+    top: -40%;
   }
-  .sb-bottom-section .circle{
-    border: none;
+  100% {
+    top: 25%;
   }
-  #rooms{
-    visibility: hidden; /* hides sub-menu */
-  opacity: 0;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  transform: translateY(-2em);
-  z-index: -1;
-  transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+}
+@-moz-keyframes big-drop {
+  0% {
+    top: 25%;
   }
-  #rooms.active {
-    visibility: visible; /* shows sub-menu */
-    opacity: 1;
-    z-index: 1;
-    transform: translateY(0%);
-    transition-delay: 0s, 0s, 0.3s; /* this removes the transition delay so the menu will be visible while the other styles transition */
+  50% {
+    top: -40%;
   }
-  .room{
-    text-align: center;
+  100% {
+    top: 25%;
+  }
+}
+@keyframes big-drop {
+  0% {
+    top: 25%;
+  }
+  50% {
+    top: -40%;
+  }
+  100% {
+    top: 25%;
   }
 }
